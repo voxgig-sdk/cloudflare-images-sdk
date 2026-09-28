@@ -1,0 +1,92 @@
+# Entity: images_sourcingkit_source_single
+
+main: kit: entity: images_sourcingkit_source_single: {
+
+  alias: field: {}
+
+  fields: {
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "images_sourcingkit_source_single"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "5ca167e6-4e40-4ced-a209-ca1b9dd6a265"
+                k: "param"
+                n: "source_id"
+                or: "source_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}"
+          q: {
+            exist: [
+              "account_id"
+              "source_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "images"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "sourcingkit"
+            }
+            {
+              lit: "sources"
+            }
+            {
+              var: "source_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.source")]
+  ]
+
+}

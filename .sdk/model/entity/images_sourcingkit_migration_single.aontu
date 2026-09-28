@@ -1,0 +1,233 @@
+# Entity: images_sourcingkit_migration_single
+
+main: kit: entity: images_sourcingkit_migration_single: {
+
+  alias: field: {}
+
+  fields: {
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "images_sourcingkit_migration_single"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "5ca167e6-4e40-4ced-a209-ca1b9dd6a265"
+                k: "param"
+                n: "migration_id"
+                or: "migration_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}"
+          q: {
+            exist: [
+              "account_id"
+              "migration_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "images"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "sourcingkit"
+            }
+            {
+              lit: "migrations"
+            }
+            {
+              var: "migration_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PATCH /accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/lifecycle/abort"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "5ca167e6-4e40-4ced-a209-ca1b9dd6a265"
+                k: "param"
+                n: "migration_id"
+                or: "migration_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/lifecycle/abort"
+          q: {
+            exist: [
+              "account_id"
+              "migration_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "images"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "sourcingkit"
+            }
+            {
+              lit: "migrations"
+            }
+            {
+              var: "migration_id"
+            }
+            {
+              lit: "lifecycle"
+            }
+            {
+              lit: "abort"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PATCH /accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/lifecycle/start"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "5ca167e6-4e40-4ced-a209-ca1b9dd6a265"
+                k: "param"
+                n: "migration_id"
+                or: "migration_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/lifecycle/start"
+          q: {
+            exist: [
+              "account_id"
+              "migration_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "images"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "sourcingkit"
+            }
+            {
+              lit: "migrations"
+            }
+            {
+              var: "migration_id"
+            }
+            {
+              lit: "lifecycle"
+            }
+            {
+              lit: "start"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.migration")]
+  ]
+
+}

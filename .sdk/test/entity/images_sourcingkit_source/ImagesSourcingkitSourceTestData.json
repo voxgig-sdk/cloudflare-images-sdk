@@ -1,0 +1,56 @@
+{
+  "existing": {
+    "images_sourcingkit_source": {
+      "IMAGES_SOURCINGKIT_SOURCE00": {
+        "account": "s3c",
+        "bucket": "s3d",
+        "id": "IMAGES_SOURCINGKIT_SOURCE00",
+        "name": "s3f",
+        "secret": {},
+        "vendor": "s41",
+        "account_id": "ACCOUNT01"
+      },
+      "IMAGES_SOURCINGKIT_SOURCE01": {
+        "account": "s78",
+        "bucket": "s79",
+        "id": "IMAGES_SOURCINGKIT_SOURCE01",
+        "name": "s7b",
+        "secret": {},
+        "vendor": "s7d",
+        "account_id": "ACCOUNT01"
+      },
+      "IMAGES_SOURCINGKIT_SOURCE02": {
+        "account": "sb4",
+        "bucket": "sb5",
+        "id": "IMAGES_SOURCINGKIT_SOURCE02",
+        "name": "sb7",
+        "secret": {},
+        "vendor": "sb9",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "images_sourcingkit_source": {
+      "images_sourcingkit_source_ref01": {
+        "account": "sf0",
+        "bucket": "sf1",
+        "name": "sf3",
+        "secret": {},
+        "vendor": "sf5"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/images/v2/sourcingkit/sources": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

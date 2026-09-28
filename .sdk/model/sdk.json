@@ -1,0 +1,5222 @@
+{
+  "def": "cf-images-openapi.json",
+  "main": {
+    "def": {
+      "desc": ""
+    },
+    "kit": {
+      "author": {
+        "name": "",
+        "url": ""
+      },
+      "config": {
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ],
+        "headers": {
+          "content-type": "application/json"
+        },
+        "repr": "auto"
+      },
+      "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "github-pages": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "github-pages",
+            "name": "github-pages",
+            "origname": "",
+            "output": {
+              "path": "docs"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          },
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
+      "entity": {
+        "cloudflare_image": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {},
+          "name": "cloudflare_image",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/images/v1/{image_id}/blob",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "107b9558-dd06-4bbd-5fef-9c2c16bb7900",
+                        "k": "param",
+                        "n": "v1_id",
+                        "or": "image_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/images/v1/{image_id}/blob",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "v1_id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "image_id": "v1_id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "var": "v1_id"
+                    },
+                    {
+                      "lit": "blob"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "image": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "etag": {
+              "a": true,
+              "h": "Etag",
+              "n": "etag",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "flows": {
+              "a": true,
+              "h": "Flows",
+              "n": "flows",
+              "r": true,
+              "t": "`$ARRAY`",
+              "union": {
+                "branches": 5,
+                "count": 2,
+                "depth": 5
+              }
+            },
+            "version": {
+              "a": true,
+              "h": "Version",
+              "n": "version",
+              "r": true,
+              "t": "`$NUMBER`"
+            }
+          },
+          "name": "image",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /zones/{zone_id}/images/v1/flows",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "zone_id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/zones/{zone_id}/images/v1/flows",
+                  "q": {
+                    "exist": [
+                      "zone_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "zone_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "flows"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.result`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PUT /zones/{zone_id}/images/v1/flows",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "zone_id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "PUT",
+                  "o": "/zones/{zone_id}/images/v1/flows",
+                  "q": {
+                    "exist": [
+                      "zone_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "zone_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "flows"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.result`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "images_deleted": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {},
+          "name": "images_deleted",
+          "op": {
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /accounts/{account_id}/images/v1/variants/{variant_id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "hero",
+                        "k": "param",
+                        "n": "variant_id",
+                        "or": "variant_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/accounts/{account_id}/images/v1/variants/{variant_id}",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "variant_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "variants"
+                    },
+                    {
+                      "var": "variant_id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "images_image_direct_upload": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "expiry": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Expiry",
+              "n": "expiry",
+              "r": false,
+              "sh": "The date after which the upload will not be accepted.",
+              "t": "`$STRING`"
+            }
+          },
+          "name": "images_image_direct_upload",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /accounts/{account_id}/images/v1/direct_upload",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/accounts/{account_id}/images/v1/direct_upload",
+                  "q": {
+                    "exist": [
+                      "account_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "direct_upload"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /accounts/{account_id}/images/v2/direct_upload",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/accounts/{account_id}/images/v2/direct_upload",
+                  "q": {
+                    "exist": [
+                      "account_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "direct_upload"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "images_image_key_response_collection": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": true,
+              "t": "`$OBJECT`",
+              "union": {
+                "branches": 3,
+                "count": 2,
+                "depth": 6
+              }
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Whether the API call was successful",
+              "t": "`$BOOLEAN`"
+            }
+          },
+          "name": "images_image_key_response_collection",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/images/v1/keys",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/images/v1/keys",
+                  "q": {
+                    "exist": [
+                      "account_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "keys"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /accounts/{account_id}/images/v1/keys/{signing_key_name}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "someKey",
+                        "k": "param",
+                        "n": "signing_key_name",
+                        "or": "signing_key_name",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/accounts/{account_id}/images/v1/keys/{signing_key_name}",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "signing_key_name"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "keys"
+                    },
+                    {
+                      "var": "signing_key_name"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PUT /accounts/{account_id}/images/v1/keys/{signing_key_name}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "someKey",
+                        "k": "param",
+                        "n": "signing_key_name",
+                        "or": "signing_key_name",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "PUT",
+                  "o": "/accounts/{account_id}/images/v1/keys/{signing_key_name}",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "signing_key_name"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "keys"
+                    },
+                    {
+                      "var": "signing_key_name"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "images_image_response_single": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "creator": {
+              "a": true,
+              "h": "Creator",
+              "n": "creator",
+              "r": false,
+              "sh": "Can set the creator field with an internal user ID.",
+              "t": "`$STRING`"
+            },
+            "metadata": {
+              "a": true,
+              "h": "Metadata",
+              "n": "metadata",
+              "r": false,
+              "sh": "User modifiable key-value store.",
+              "t": "`$OBJECT`"
+            },
+            "requireSignedURLs": {
+              "a": true,
+              "h": "Require Signed Ur Ls",
+              "n": "requireSignedURLs",
+              "r": false,
+              "sh": "Indicates whether the image can be accessed using only its UID.",
+              "t": "`$BOOLEAN`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": false,
+              "t": "`$OBJECT`",
+              "union": {
+                "branches": 3,
+                "count": 1,
+                "depth": 3
+              }
+            }
+          },
+          "name": "images_image_response_single",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /accounts/{account_id}/images/v1",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/accounts/{account_id}/images/v1",
+                  "q": {
+                    "exist": [
+                      "account_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v1"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/images/v1/{image_id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "107b9558-dd06-4bbd-5fef-9c2c16bb7900",
+                        "k": "param",
+                        "n": "image_id",
+                        "or": "image_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/images/v1/{image_id}",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "image_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "var": "image_id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PATCH /accounts/{account_id}/images/v1/{image_id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "107b9558-dd06-4bbd-5fef-9c2c16bb7900",
+                        "k": "param",
+                        "n": "image_id",
+                        "or": "image_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "PATCH",
+                  "o": "/accounts/{account_id}/images/v1/{image_id}",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "image_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "var": "image_id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "images_image_variant_flat": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": true,
+              "t": "`$OBJECT`"
+            }
+          },
+          "name": "images_image_variant_flat",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/images/v1/variants/{variant_id}/flat",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "hero",
+                        "k": "param",
+                        "n": "variant_id",
+                        "or": "variant_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/images/v1/variants/{variant_id}/flat",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "variant_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "variants"
+                    },
+                    {
+                      "var": "variant_id"
+                    },
+                    {
+                      "lit": "flat"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "images_image_variant_list": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": true,
+              "t": "`$OBJECT`",
+              "union": {
+                "branches": 3,
+                "count": 2,
+                "depth": 6
+              }
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Whether the API call was successful",
+              "t": "`$BOOLEAN`"
+            }
+          },
+          "name": "images_image_variant_list",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/images/v1/variants",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/images/v1/variants",
+                  "q": {
+                    "exist": [
+                      "account_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "variants"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "images_image_variant_simple": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "neverRequireSignedURLs": {
+              "a": true,
+              "h": "Never Require Signed Ur Ls",
+              "n": "neverRequireSignedURLs",
+              "r": false,
+              "sh": "Indicates whether the variant can access an image without a signature, regardless of image access control.",
+              "t": "`$BOOLEAN`"
+            },
+            "options": {
+              "a": true,
+              "h": "Options",
+              "n": "options",
+              "r": true,
+              "sh": "Allows you to define image resizing sizes for different use cases.",
+              "t": "`$OBJECT`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": false,
+              "t": "`$OBJECT`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "images_image_variant_simple",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /accounts/{account_id}/images/v1/variants",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/accounts/{account_id}/images/v1/variants",
+                  "q": {
+                    "exist": [
+                      "account_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "variants"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/images/v1/variants/{variant_id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "hero",
+                        "k": "param",
+                        "n": "variant_id",
+                        "or": "variant_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/images/v1/variants/{variant_id}",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "variant_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "variants"
+                    },
+                    {
+                      "var": "variant_id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PATCH /accounts/{account_id}/images/v1/variants/{variant_id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "hero",
+                        "k": "param",
+                        "n": "variant_id",
+                        "or": "variant_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "PATCH",
+                  "o": "/accounts/{account_id}/images/v1/variants/{variant_id}",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "variant_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "variants"
+                    },
+                    {
+                      "var": "variant_id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "images_images_list": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "op": {
+                "list": {
+                  "req": true,
+                  "type": "`$OBJECT`"
+                }
+              },
+              "r": false,
+              "t": "`$OBJECT`",
+              "union": {
+                "branches": 3,
+                "count": 1,
+                "depth": 6
+              }
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Whether the API call was successful",
+              "t": "`$BOOLEAN`"
+            }
+          },
+          "name": "images_images_list",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/images/v1",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "creator",
+                        "or": "creator",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 1,
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 1000,
+                        "k": "query",
+                        "n": "per_page",
+                        "or": "per_page",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/images/v1",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "creator",
+                      "page",
+                      "per_page"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v1"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/images/v2",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "iD0bxlWFSVUWsDHbzIqvDkgBW4otifAAuGXLz1n8BQA",
+                        "k": "query",
+                        "n": "continuation_token",
+                        "or": "continuation_token",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "creator",
+                        "or": "creator",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "meta_<field>_<operator>",
+                        "or": "meta_<field>_<operator>",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 1000,
+                        "k": "query",
+                        "n": "per_page",
+                        "or": "per_page",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "desc",
+                        "k": "query",
+                        "n": "sort_order",
+                        "or": "sort_order",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/images/v2",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "continuation_token",
+                      "creator",
+                      "meta_<field>_<operator>",
+                      "per_page",
+                      "sort_order"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v2"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "images_images_stat": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": false,
+              "t": "`$OBJECT`"
+            }
+          },
+          "name": "images_images_stat",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/images/v1/stats",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/images/v1/stats",
+                  "q": {
+                    "exist": [
+                      "account_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "stats"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "images_metadata_key": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": true,
+              "t": "`$OBJECT`",
+              "union": {
+                "branches": 3,
+                "count": 2,
+                "depth": 6
+              }
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Whether the API call was successful",
+              "t": "`$BOOLEAN`"
+            }
+          },
+          "name": "images_metadata_key",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/images/v2/metadata/keys",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/images/v2/metadata/keys",
+                  "q": {
+                    "exist": [
+                      "account_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "metadata"
+                    },
+                    {
+                      "lit": "keys"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "images_sourcingkit_connectivity_check": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "account": {
+              "a": true,
+              "h": "Account",
+              "n": "account",
+              "r": false,
+              "sh": "Account identifier for the bucket (required for R2 vendor).",
+              "t": "`$STRING`"
+            },
+            "bucket": {
+              "a": true,
+              "h": "Bucket",
+              "n": "bucket",
+              "r": true,
+              "sh": "The name of the storage bucket.",
+              "t": "`$STRING`"
+            },
+            "region": {
+              "a": true,
+              "h": "Region",
+              "n": "region",
+              "r": false,
+              "sh": "The region hint for the bucket (S3 only).",
+              "t": "`$STRING`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": false,
+              "t": "`$OBJECT`"
+            },
+            "secret": {
+              "a": true,
+              "h": "Secret",
+              "n": "secret",
+              "r": true,
+              "sh": "Storage credentials for accessing the bucket.",
+              "t": "`$OBJECT`",
+              "wo": true
+            },
+            "vendor": {
+              "a": true,
+              "h": "Vendor",
+              "n": "vendor",
+              "r": true,
+              "sh": "The cloud storage vendor of the source bucket.",
+              "t": "`$STRING`"
+            }
+          },
+          "name": "images_sourcingkit_connectivity_check",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /accounts/{account_id}/images/v2/sourcingkit/sources/connectivity-precheck",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/accounts/{account_id}/images/v2/sourcingkit/sources/connectivity-precheck",
+                  "q": {
+                    "exist": [
+                      "account_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "sourcingkit"
+                    },
+                    {
+                      "lit": "sources"
+                    },
+                    {
+                      "lit": "connectivity-precheck"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}/connectivity",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "5ca167e6-4e40-4ced-a209-ca1b9dd6a265",
+                        "k": "param",
+                        "n": "source_id",
+                        "or": "source_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}/connectivity",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "source_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "sourcingkit"
+                    },
+                    {
+                      "lit": "sources"
+                    },
+                    {
+                      "var": "source_id"
+                    },
+                    {
+                      "lit": "connectivity"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": [
+              [
+                "$.main.kit.entity.source"
+              ]
+            ]
+          }
+        },
+        "images_sourcingkit_migration": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "conflictBehaviour": {
+              "a": true,
+              "h": "Conflict Behaviour",
+              "n": "conflictBehaviour",
+              "r": false,
+              "sh": "How to handle objects that already exist at the destination.",
+              "t": "`$STRING`"
+            },
+            "excludedContentTypes": {
+              "a": true,
+              "h": "Excluded Content Types",
+              "n": "excludedContentTypes",
+              "r": false,
+              "sh": "Content types to skip during migration.",
+              "t": "`$ARRAY`"
+            },
+            "pathPrefix": {
+              "a": true,
+              "h": "Path Prefix",
+              "n": "pathPrefix",
+              "r": false,
+              "sh": "Prefix to prepend to image custom IDs.",
+              "t": "`$STRING`"
+            },
+            "rootDirectory": {
+              "a": true,
+              "h": "Root Directory",
+              "n": "rootDirectory",
+              "r": false,
+              "sh": "Only import objects under this prefix in the source bucket.",
+              "t": "`$STRING`"
+            },
+            "sourceId": {
+              "a": true,
+              "fo": "uuid",
+              "h": "Source Id",
+              "n": "sourceId",
+              "r": true,
+              "sh": "The identifier of the source to migrate from.",
+              "t": "`$STRING`"
+            }
+          },
+          "name": "images_sourcingkit_migration",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /accounts/{account_id}/images/v2/sourcingkit/migrations",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/accounts/{account_id}/images/v2/sourcingkit/migrations",
+                  "q": {
+                    "exist": [
+                      "account_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "sourcingkit"
+                    },
+                    {
+                      "lit": "migrations"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "images_sourcingkit_migration_list": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": true,
+              "t": "`$OBJECT`",
+              "union": {
+                "branches": 3,
+                "count": 2,
+                "depth": 6
+              }
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Whether the API call was successful",
+              "t": "`$BOOLEAN`"
+            }
+          },
+          "name": "images_sourcingkit_migration_list",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/images/v2/sourcingkit/migrations",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": 25,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "offset",
+                        "or": "offset",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/images/v2/sourcingkit/migrations",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "limit",
+                      "offset"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "sourcingkit"
+                    },
+                    {
+                      "lit": "migrations"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "images_sourcingkit_migration_log_list": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": true,
+              "t": "`$OBJECT`",
+              "union": {
+                "branches": 3,
+                "count": 2,
+                "depth": 6
+              }
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Whether the API call was successful",
+              "t": "`$BOOLEAN`"
+            }
+          },
+          "name": "images_sourcingkit_migration_log_list",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/logs",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "5ca167e6-4e40-4ced-a209-ca1b9dd6a265",
+                        "k": "param",
+                        "n": "migration_id",
+                        "or": "migration_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": 25,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "offset",
+                        "or": "offset",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/logs",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "limit",
+                      "migration_id",
+                      "offset"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "sourcingkit"
+                    },
+                    {
+                      "lit": "migrations"
+                    },
+                    {
+                      "var": "migration_id"
+                    },
+                    {
+                      "lit": "logs"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": [
+              [
+                "$.main.kit.entity.migration"
+              ]
+            ]
+          }
+        },
+        "images_sourcingkit_migration_progress": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": false,
+              "t": "`$OBJECT`"
+            }
+          },
+          "name": "images_sourcingkit_migration_progress",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/lifecycle",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "5ca167e6-4e40-4ced-a209-ca1b9dd6a265",
+                        "k": "param",
+                        "n": "migration_id",
+                        "or": "migration_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/lifecycle",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "migration_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "sourcingkit"
+                    },
+                    {
+                      "lit": "migrations"
+                    },
+                    {
+                      "var": "migration_id"
+                    },
+                    {
+                      "lit": "lifecycle"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": [
+              [
+                "$.main.kit.entity.migration"
+              ]
+            ]
+          }
+        },
+        "images_sourcingkit_migration_single": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": false,
+              "t": "`$OBJECT`"
+            }
+          },
+          "name": "images_sourcingkit_migration_single",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "5ca167e6-4e40-4ced-a209-ca1b9dd6a265",
+                        "k": "param",
+                        "n": "migration_id",
+                        "or": "migration_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "migration_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "sourcingkit"
+                    },
+                    {
+                      "lit": "migrations"
+                    },
+                    {
+                      "var": "migration_id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PATCH /accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/lifecycle/abort",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "5ca167e6-4e40-4ced-a209-ca1b9dd6a265",
+                        "k": "param",
+                        "n": "migration_id",
+                        "or": "migration_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "PATCH",
+                  "o": "/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/lifecycle/abort",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "migration_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "sourcingkit"
+                    },
+                    {
+                      "lit": "migrations"
+                    },
+                    {
+                      "var": "migration_id"
+                    },
+                    {
+                      "lit": "lifecycle"
+                    },
+                    {
+                      "lit": "abort"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PATCH /accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/lifecycle/start",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "5ca167e6-4e40-4ced-a209-ca1b9dd6a265",
+                        "k": "param",
+                        "n": "migration_id",
+                        "or": "migration_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "PATCH",
+                  "o": "/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/lifecycle/start",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "migration_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "sourcingkit"
+                    },
+                    {
+                      "lit": "migrations"
+                    },
+                    {
+                      "var": "migration_id"
+                    },
+                    {
+                      "lit": "lifecycle"
+                    },
+                    {
+                      "lit": "start"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": [
+              [
+                "$.main.kit.entity.migration"
+              ]
+            ]
+          }
+        },
+        "images_sourcingkit_source": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "account": {
+              "a": true,
+              "h": "Account",
+              "n": "account",
+              "r": false,
+              "sh": "Account identifier for the bucket (required for R2 vendor).",
+              "t": "`$STRING`"
+            },
+            "bucket": {
+              "a": true,
+              "h": "Bucket",
+              "n": "bucket",
+              "r": true,
+              "sh": "The name of the storage bucket.",
+              "t": "`$STRING`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": true,
+              "sh": "A human-readable name for the source.",
+              "t": "`$STRING`"
+            },
+            "secret": {
+              "a": true,
+              "h": "Secret",
+              "n": "secret",
+              "r": true,
+              "sh": "Storage credentials for accessing the bucket.",
+              "t": "`$OBJECT`",
+              "wo": true
+            },
+            "vendor": {
+              "a": true,
+              "h": "Vendor",
+              "n": "vendor",
+              "r": true,
+              "sh": "The cloud storage vendor of the source bucket.",
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "images_sourcingkit_source",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /accounts/{account_id}/images/v2/sourcingkit/sources",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/accounts/{account_id}/images/v2/sourcingkit/sources",
+                  "q": {
+                    "exist": [
+                      "account_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "sourcingkit"
+                    },
+                    {
+                      "lit": "sources"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PATCH /accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "5ca167e6-4e40-4ced-a209-ca1b9dd6a265",
+                        "k": "param",
+                        "n": "id",
+                        "or": "source_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "PATCH",
+                  "o": "/accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "source_id": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "sourcingkit"
+                    },
+                    {
+                      "lit": "sources"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "images_sourcingkit_source_list": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": true,
+              "t": "`$OBJECT`",
+              "union": {
+                "branches": 3,
+                "count": 2,
+                "depth": 6
+              }
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Whether the API call was successful",
+              "t": "`$BOOLEAN`"
+            }
+          },
+          "name": "images_sourcingkit_source_list",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/images/v2/sourcingkit/sources",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": 25,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "name",
+                        "or": "name",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "offset",
+                        "or": "offset",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/images/v2/sourcingkit/sources",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "limit",
+                      "name",
+                      "offset"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "sourcingkit"
+                    },
+                    {
+                      "lit": "sources"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "images_sourcingkit_source_single": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": false,
+              "t": "`$OBJECT`"
+            }
+          },
+          "name": "images_sourcingkit_source_single",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "5ca167e6-4e40-4ced-a209-ca1b9dd6a265",
+                        "k": "param",
+                        "n": "source_id",
+                        "or": "source_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "source_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "sourcingkit"
+                    },
+                    {
+                      "lit": "sources"
+                    },
+                    {
+                      "var": "source_id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": [
+              [
+                "$.main.kit.entity.source"
+              ]
+            ]
+          }
+        },
+        "migration": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "migration",
+          "op": {
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "5ca167e6-4e40-4ced-a209-ca1b9dd6a265",
+                        "k": "param",
+                        "n": "id",
+                        "or": "migration_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "migration_id": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "sourcingkit"
+                    },
+                    {
+                      "lit": "migrations"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "source": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "source",
+          "op": {
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "5ca167e6-4e40-4ced-a209-ca1b9dd6a265",
+                        "k": "param",
+                        "n": "id",
+                        "or": "source_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "source_id": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v2"
+                    },
+                    {
+                      "lit": "sourcingkit"
+                    },
+                    {
+                      "lit": "sources"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "v1n": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {},
+          "name": "v1n",
+          "op": {
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /accounts/{account_id}/images/v1/{image_id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "107b9558-dd06-4bbd-5fef-9c2c16bb7900",
+                        "k": "param",
+                        "n": "image_id",
+                        "or": "image_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/accounts/{account_id}/images/v1/{image_id}",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "image_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "images"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "var": "image_id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        }
+      },
+      "feature": {
+        "test": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false
+            },
+            "optspec": {
+              "entity": "`$MAP`",
+              "net": "`$MAP`"
+            },
+            "strict": false
+          },
+          "description": "In-memory mock transport for testing without a live server",
+          "hook": {
+            "GetData": {
+              "active": true,
+              "await": false
+            },
+            "GetMatch": {
+              "active": true,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": true,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": true,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PrePoint": {
+              "active": true,
+              "await": false
+            },
+            "PreRequest": {
+              "active": true,
+              "await": false
+            },
+            "PreResponse": {
+              "active": true,
+              "await": false
+            },
+            "PreResult": {
+              "active": true,
+              "await": false
+            },
+            "PreSpec": {
+              "active": true,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": true,
+              "await": false
+            },
+            "SetMatch": {
+              "active": true,
+              "await": false
+            }
+          },
+          "name": "test",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Test transport",
+          "transport": "base",
+          "version": "0.0.1"
+        }
+      },
+      "flow": {
+        "BasicCloudflareImageFlow": {
+          "active": true,
+          "entity": "cloudflare_image",
+          "key$": "BasicCloudflareImageFlow",
+          "kind": "basic",
+          "name": "BasicCloudflareImageFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "cloudflare_image_ref01",
+                "srcdatavar": "cloudflare_image_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "account_id": "account01",
+                "id": "cloudflare_image01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-cloudflare_image_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicImageFlow": {
+          "active": true,
+          "entity": "image",
+          "key$": "BasicImageFlow",
+          "kind": "basic",
+          "name": "BasicImageFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "image_ref01",
+                "srcdatavar": "image_ref01_data",
+                "suffix": "_up0",
+                "textfield": "etag"
+              },
+              "m": {},
+              "o": "update",
+              "s": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-image_ref01"
+                  }
+                }
+              ],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "image_ref01",
+                "srcdatavar": "image_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "image01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-image_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicImagesDeletedFlow": {
+          "active": true,
+          "entity": "images_deleted",
+          "key$": "BasicImagesDeletedFlow",
+          "kind": "basic",
+          "name": "BasicImagesDeletedFlow",
+          "param": {},
+          "step": []
+        },
+        "BasicImagesImageDirectUploadFlow": {
+          "active": true,
+          "entity": "images_image_direct_upload",
+          "key$": "BasicImagesImageDirectUploadFlow",
+          "kind": "basic",
+          "name": "BasicImagesImageDirectUploadFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "images_image_direct_upload_ref01"
+              },
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "create",
+              "s": [],
+              "v": []
+            }
+          ]
+        },
+        "BasicImagesImageKeyResponseCollectionFlow": {
+          "active": true,
+          "entity": "images_image_key_response_collection",
+          "key$": "BasicImagesImageKeyResponseCollectionFlow",
+          "kind": "basic",
+          "name": "BasicImagesImageKeyResponseCollectionFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "images_image_key_response_collection_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {
+                "account_id": "account01"
+              },
+              "i": {
+                "ref": "images_image_key_response_collection_ref01",
+                "srcdatavar": "images_image_key_response_collection_ref01_data",
+                "suffix": "_up0"
+              },
+              "m": {},
+              "o": "update",
+              "s": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-images_image_key_response_collection_ref01"
+                  }
+                }
+              ],
+              "v": []
+            }
+          ]
+        },
+        "BasicImagesImageResponseSingleFlow": {
+          "active": true,
+          "entity": "images_image_response_single",
+          "key$": "BasicImagesImageResponseSingleFlow",
+          "kind": "basic",
+          "name": "BasicImagesImageResponseSingleFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "images_image_response_single_ref01"
+              },
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {
+                "account_id": "account01"
+              },
+              "i": {
+                "ref": "images_image_response_single_ref01",
+                "srcdatavar": "images_image_response_single_ref01_data",
+                "suffix": "_up0",
+                "textfield": "creator"
+              },
+              "m": {},
+              "o": "update",
+              "s": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-images_image_response_single_ref01"
+                  }
+                }
+              ],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "images_image_response_single_ref01",
+                "srcdatavar": "images_image_response_single_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "account_id": "account01",
+                "id": "images_image_response_single01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-images_image_response_single_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicImagesImageVariantFlatFlow": {
+          "active": true,
+          "entity": "images_image_variant_flat",
+          "key$": "BasicImagesImageVariantFlatFlow",
+          "kind": "basic",
+          "name": "BasicImagesImageVariantFlatFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "images_image_variant_flat_ref01",
+                "srcdatavar": "images_image_variant_flat_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "account_id": "account01",
+                "id": "images_image_variant_flat01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-images_image_variant_flat_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicImagesImageVariantListFlow": {
+          "active": true,
+          "entity": "images_image_variant_list",
+          "key$": "BasicImagesImageVariantListFlow",
+          "kind": "basic",
+          "name": "BasicImagesImageVariantListFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "images_image_variant_list_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicImagesImageVariantSimpleFlow": {
+          "active": true,
+          "entity": "images_image_variant_simple",
+          "key$": "BasicImagesImageVariantSimpleFlow",
+          "kind": "basic",
+          "name": "BasicImagesImageVariantSimpleFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "images_image_variant_simple_ref01"
+              },
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {
+                "account_id": "account01"
+              },
+              "i": {
+                "ref": "images_image_variant_simple_ref01",
+                "srcdatavar": "images_image_variant_simple_ref01_data",
+                "suffix": "_up0"
+              },
+              "m": {},
+              "o": "update",
+              "s": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-images_image_variant_simple_ref01"
+                  }
+                }
+              ],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "images_image_variant_simple_ref01",
+                "srcdatavar": "images_image_variant_simple_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "account_id": "account01",
+                "id": "images_image_variant_simple01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-images_image_variant_simple_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicImagesImagesListFlow": {
+          "active": true,
+          "entity": "images_images_list",
+          "key$": "BasicImagesImagesListFlow",
+          "kind": "basic",
+          "name": "BasicImagesImagesListFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "images_images_list_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "images_images_list_ref01",
+                "srcdatavar": "images_images_list_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "images_images_list01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-images_images_list_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicImagesImagesStatFlow": {
+          "active": true,
+          "entity": "images_images_stat",
+          "key$": "BasicImagesImagesStatFlow",
+          "kind": "basic",
+          "name": "BasicImagesImagesStatFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "images_images_stat_ref01",
+                "srcdatavar": "images_images_stat_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "images_images_stat01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-images_images_stat_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicImagesMetadataKeyFlow": {
+          "active": true,
+          "entity": "images_metadata_key",
+          "key$": "BasicImagesMetadataKeyFlow",
+          "kind": "basic",
+          "name": "BasicImagesMetadataKeyFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "images_metadata_key_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicImagesSourcingkitConnectivityCheckFlow": {
+          "active": true,
+          "entity": "images_sourcingkit_connectivity_check",
+          "key$": "BasicImagesSourcingkitConnectivityCheckFlow",
+          "kind": "basic",
+          "name": "BasicImagesSourcingkitConnectivityCheckFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "images_sourcingkit_connectivity_check_ref01"
+              },
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "images_sourcingkit_connectivity_check_ref01",
+                "srcdatavar": "images_sourcingkit_connectivity_check_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "account_id": "account01",
+                "id": "images_sourcingkit_connectivity_check01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-images_sourcingkit_connectivity_check_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicImagesSourcingkitMigrationFlow": {
+          "active": true,
+          "entity": "images_sourcingkit_migration",
+          "key$": "BasicImagesSourcingkitMigrationFlow",
+          "kind": "basic",
+          "name": "BasicImagesSourcingkitMigrationFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "images_sourcingkit_migration_ref01"
+              },
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "create",
+              "s": [],
+              "v": []
+            }
+          ]
+        },
+        "BasicImagesSourcingkitMigrationListFlow": {
+          "active": true,
+          "entity": "images_sourcingkit_migration_list",
+          "key$": "BasicImagesSourcingkitMigrationListFlow",
+          "kind": "basic",
+          "name": "BasicImagesSourcingkitMigrationListFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "images_sourcingkit_migration_list_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicImagesSourcingkitMigrationLogListFlow": {
+          "active": true,
+          "entity": "images_sourcingkit_migration_log_list",
+          "key$": "BasicImagesSourcingkitMigrationLogListFlow",
+          "kind": "basic",
+          "name": "BasicImagesSourcingkitMigrationLogListFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {
+                "account_id": "account01",
+                "migration_id": "migration01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "images_sourcingkit_migration_log_list_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicImagesSourcingkitMigrationProgressFlow": {
+          "active": true,
+          "entity": "images_sourcingkit_migration_progress",
+          "key$": "BasicImagesSourcingkitMigrationProgressFlow",
+          "kind": "basic",
+          "name": "BasicImagesSourcingkitMigrationProgressFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "images_sourcingkit_migration_progress_ref01",
+                "srcdatavar": "images_sourcingkit_migration_progress_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "account_id": "account01",
+                "id": "images_sourcingkit_migration_progress01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-images_sourcingkit_migration_progress_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicImagesSourcingkitMigrationSingleFlow": {
+          "active": true,
+          "entity": "images_sourcingkit_migration_single",
+          "key$": "BasicImagesSourcingkitMigrationSingleFlow",
+          "kind": "basic",
+          "name": "BasicImagesSourcingkitMigrationSingleFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {
+                "account_id": "account01"
+              },
+              "i": {
+                "ref": "images_sourcingkit_migration_single_ref01",
+                "srcdatavar": "images_sourcingkit_migration_single_ref01_data",
+                "suffix": "_up0"
+              },
+              "m": {},
+              "o": "update",
+              "s": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-images_sourcingkit_migration_single_ref01"
+                  }
+                }
+              ],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "images_sourcingkit_migration_single_ref01",
+                "srcdatavar": "images_sourcingkit_migration_single_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "account_id": "account01",
+                "id": "images_sourcingkit_migration_single01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-images_sourcingkit_migration_single_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicImagesSourcingkitSourceFlow": {
+          "active": true,
+          "entity": "images_sourcingkit_source",
+          "key$": "BasicImagesSourcingkitSourceFlow",
+          "kind": "basic",
+          "name": "BasicImagesSourcingkitSourceFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "images_sourcingkit_source_ref01"
+              },
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {
+                "account_id": "account01"
+              },
+              "i": {
+                "ref": "images_sourcingkit_source_ref01",
+                "srcdatavar": "images_sourcingkit_source_ref01_data",
+                "suffix": "_up0",
+                "textfield": "account"
+              },
+              "m": {},
+              "o": "update",
+              "s": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-images_sourcingkit_source_ref01"
+                  }
+                }
+              ],
+              "v": []
+            }
+          ]
+        },
+        "BasicImagesSourcingkitSourceListFlow": {
+          "active": true,
+          "entity": "images_sourcingkit_source_list",
+          "key$": "BasicImagesSourcingkitSourceListFlow",
+          "kind": "basic",
+          "name": "BasicImagesSourcingkitSourceListFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "images_sourcingkit_source_list_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicImagesSourcingkitSourceSingleFlow": {
+          "active": true,
+          "entity": "images_sourcingkit_source_single",
+          "key$": "BasicImagesSourcingkitSourceSingleFlow",
+          "kind": "basic",
+          "name": "BasicImagesSourcingkitSourceSingleFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "images_sourcingkit_source_single_ref01",
+                "srcdatavar": "images_sourcingkit_source_single_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "account_id": "account01",
+                "id": "images_sourcingkit_source_single01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-images_sourcingkit_source_single_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicMigrationFlow": {
+          "active": true,
+          "entity": "migration",
+          "key$": "BasicMigrationFlow",
+          "kind": "basic",
+          "name": "BasicMigrationFlow",
+          "param": {},
+          "step": []
+        },
+        "BasicSourceFlow": {
+          "active": true,
+          "entity": "source",
+          "key$": "BasicSourceFlow",
+          "kind": "basic",
+          "name": "BasicSourceFlow",
+          "param": {},
+          "step": []
+        },
+        "BasicV1nFlow": {
+          "active": true,
+          "entity": "v1n",
+          "key$": "BasicV1nFlow",
+          "kind": "basic",
+          "name": "BasicV1nFlow",
+          "param": {},
+          "step": []
+        }
+      },
+      "info": {
+        "description": "Cloudflare Images: image upload, variants, keys, and delivery optimization.",
+        "license": {
+          "name": "BSD-3-Clause",
+          "url": "https://opensource.org/licenses/BSD-3-Clause"
+        },
+        "security": {
+          "in": "header",
+          "name": "X-Auth-Email",
+          "prefix": "",
+          "scheme": "api_email",
+          "type": "apiKey"
+        },
+        "servers": [
+          {
+            "description": "Client API",
+            "url": "https://api.cloudflare.com/client/v4"
+          }
+        ],
+        "summary": "Cloudflare Images: image upload, variants, keys, and delivery optimization.",
+        "title": "Cloudflare Images",
+        "version": "4.0.0",
+        "website": "https://cloudflare.com"
+      },
+      "option": {},
+      "optspec": {
+        "allow": {
+          "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
+          "op": "create,update,load,list,remove,command,direct,graphql"
+        },
+        "apikey": "",
+        "auth": {
+          "basic": false,
+          "in": "",
+          "name": "",
+          "prefix": ""
+        },
+        "base": "http://localhost:8000",
+        "clean": {
+          "keys": "key,token,id"
+        },
+        "entity": {
+          "`$CHILD`": {
+            "`$OPEN`": true,
+            "active": false,
+            "alias": {}
+          }
+        },
+        "extend": "`$ANY`",
+        "headers": {
+          "`$CHILD`": "`$STRING`"
+        },
+        "prefix": "",
+        "secret": "",
+        "server": {
+          "`$CHILD`": ""
+        },
+        "suffix": "",
+        "system": {
+          "fetch": "`$ANY`"
+        },
+        "test": {
+          "active": false,
+          "entity": {
+            "`$OPEN`": true
+          }
+        },
+        "utility": {}
+      },
+      "phase": {
+        "build": {
+          "active": true
+        },
+        "top": {
+          "active": true
+        }
+      },
+      "repo": {
+        "host": "github.com",
+        "path": ""
+      },
+      "target": {
+        "go": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "go",
+          "feature": {
+            "fullset": [
+              "test/feature_test.go"
+            ],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "Cloudflare-images",
+            "package": "",
+            "path": ""
+          },
+          "name": "go",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "",
+              "package": "",
+              "state": "pending",
+              "url": "",
+              "vault": {
+                "alias": "",
+                "env": "",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [
+            "test/runner_test.go",
+            "test/struct_runner_test.go"
+          ],
+          "title": "Golang"
+        },
+        "go-cli": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "go",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "Cloudflare-images",
+            "package": "",
+            "path": ""
+          },
+          "name": "go-cli",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "phase": {
+            "agentguide": {
+              "active": false
+            },
+            "entity": {
+              "active": false
+            },
+            "feature": {
+              "active": false
+            },
+            "readme": {
+              "active": false
+            },
+            "test": {
+              "active": false
+            }
+          },
+          "provides": {},
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "",
+              "package": "",
+              "state": "pending",
+              "url": "",
+              "vault": {
+                "alias": "",
+                "env": "",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "root"
+            },
+            "version": "0.0.1"
+          },
+          "superseded": [],
+          "title": "Go CLI"
+        },
+        "go-mcp": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "go",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "Cloudflare-images",
+            "package": "",
+            "path": ""
+          },
+          "name": "go-mcp",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "phase": {
+            "agentguide": {
+              "active": false
+            },
+            "entity": {
+              "active": false
+            },
+            "feature": {
+              "active": false
+            },
+            "readme": {
+              "active": false
+            },
+            "test": {
+              "active": false
+            }
+          },
+          "provides": {},
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "",
+              "package": "",
+              "state": "pending",
+              "url": "",
+              "vault": {
+                "alias": "",
+                "env": "",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "root"
+            },
+            "version": "0.0.1"
+          },
+          "superseded": [],
+          "title": "Go MCP server"
+        },
+        "lua": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "--"
+          },
+          "deps": {
+            "dkjson": {
+              "active": true,
+              "kind": "prod",
+              "version": "2.5"
+            }
+          },
+          "ext": "lua",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "Cloudflare-images",
+            "package": "",
+            "path": ""
+          },
+          "name": "lua",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "luarocks",
+              "package": "",
+              "state": "pending",
+              "url": "https://luarocks.org",
+              "vault": {
+                "alias": "luarocks",
+                "env": "LUAROCKS_API_KEY",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.lua"
+          ],
+          "title": "Lua"
+        },
+        "php": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "php",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "Cloudflare-images",
+            "package": "",
+            "path": ""
+          },
+          "name": "php",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "packagist",
+              "package": "",
+              "state": "pending",
+              "url": "https://packagist.org",
+              "vault": {
+                "alias": "packagist",
+                "env": "PACKAGIST_API_TOKEN",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [
+            "test/StructRunner.php"
+          ],
+          "title": "PHP"
+        },
+        "py": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "#"
+          },
+          "deps": {
+            "requests": {
+              "active": true,
+              "kind": "prod",
+              "version": "2.33"
+            }
+          },
+          "ext": "py",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "Cloudflare-images",
+            "package": "",
+            "path": ""
+          },
+          "name": "py",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "pypi",
+              "package": "",
+              "state": "pending",
+              "url": "https://pypi.org",
+              "vault": {
+                "alias": "pypi",
+                "env": "",
+                "recipe": "pypi"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.py"
+          ],
+          "title": "Python"
+        },
+        "rb": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "#"
+          },
+          "deps": {
+            "json": {
+              "active": true,
+              "kind": "prod",
+              "version": "*"
+            }
+          },
+          "ext": "rb",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "Cloudflare-images",
+            "package": "",
+            "path": ""
+          },
+          "name": "rb",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "rubygems",
+              "package": "",
+              "state": "pending",
+              "url": "https://rubygems.org",
+              "vault": {
+                "alias": "gem",
+                "env": "",
+                "recipe": "gem"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.rb"
+          ],
+          "title": "Ruby"
+        },
+        "ts": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {
+            "@types/node": {
+              "active": true,
+              "kind": "dev",
+              "version": "^25.6.0"
+            },
+            "typescript": {
+              "active": true,
+              "kind": "dev",
+              "version": "^5.9.3"
+            }
+          },
+          "ext": "ts",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "Cloudflare-images",
+            "package": "",
+            "path": ""
+          },
+          "name": "ts",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "npm",
+              "package": "",
+              "state": "pending",
+              "url": "https://registry.npmjs.org",
+              "vault": {
+                "alias": "npm",
+                "env": "",
+                "recipe": "npm"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "superseded": [
+            "test/runner.ts",
+            "test/vendor/omni/compat.ts",
+            "src/feature/secrets/sekreto/Providers.ts",
+            "src/feature/secrets/sekreto/Sigv4.ts",
+            "src/feature/secrets/sekreto/provider/Registry.ts",
+            "src/feature/secrets/sekreto/provider/http.ts"
+          ],
+          "title": "TypeScript"
+        }
+      },
+      "test": {
+        "live": {
+          "app": false,
+          "base": "",
+          "strict": true
+        }
+      }
+    }
+  },
+  "name": "Cloudflare-images",
+  "origin": "voxgig-sdk"
+}

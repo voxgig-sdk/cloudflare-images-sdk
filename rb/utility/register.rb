@@ -1,0 +1,66 @@
+# CloudflareImages SDK utility registration
+require_relative '../core/utility_type'
+require_relative 'clean'
+require_relative 'done'
+require_relative 'make_error'
+require_relative 'feature_add'
+require_relative 'feature_hook'
+require_relative 'feature_init'
+require_relative 'fetcher'
+require_relative 'make_fetch_def'
+require_relative 'make_context'
+require_relative 'make_options'
+require_relative 'make_request'
+require_relative 'make_response'
+require_relative 'make_result'
+require_relative 'make_point'
+require_relative 'make_spec'
+require_relative 'make_url'
+require_relative 'param'
+require_relative 'prepare_auth'
+require_relative 'prepare_body'
+require_relative 'prepare_headers'
+require_relative 'prepare_method'
+require_relative 'prepare_params'
+require_relative 'prepare_path'
+require_relative 'prepare_query'
+require_relative 'graphql'
+require_relative 'result_basic'
+require_relative 'result_body'
+require_relative 'result_headers'
+require_relative 'transform_request'
+require_relative 'transform_response'
+
+CloudflareImagesUtility.registrar = ->(u) {
+  u.clean = CloudflareImagesUtilities::Clean
+  u.done = CloudflareImagesUtilities::Done
+  u.make_error = CloudflareImagesUtilities::MakeError
+  u.feature_add = CloudflareImagesUtilities::FeatureAdd
+  u.feature_hook = CloudflareImagesUtilities::FeatureHook
+  u.feature_init = CloudflareImagesUtilities::FeatureInit
+  u.fetcher = CloudflareImagesUtilities::Fetcher
+  u.make_fetch_def = CloudflareImagesUtilities::MakeFetchDef
+  u.make_context = CloudflareImagesUtilities::MakeContext
+  u.make_options = CloudflareImagesUtilities::MakeOptions
+  u.make_request = CloudflareImagesUtilities::MakeRequest
+  u.make_response = CloudflareImagesUtilities::MakeResponse
+  u.make_result = CloudflareImagesUtilities::MakeResult
+  u.make_point = CloudflareImagesUtilities::MakePoint
+  u.make_spec = CloudflareImagesUtilities::MakeSpec
+  u.make_url = CloudflareImagesUtilities::MakeUrl
+  u.param = CloudflareImagesUtilities::Param
+  u.prepare_auth = CloudflareImagesUtilities::PrepareAuth
+  u.prepare_body = CloudflareImagesUtilities::PrepareBody
+  u.prepare_headers = CloudflareImagesUtilities::PrepareHeaders
+  u.prepare_method = CloudflareImagesUtilities::PrepareMethod
+  u.prepare_params = CloudflareImagesUtilities::PrepareParams
+  u.prepare_path = CloudflareImagesUtilities::PreparePath
+  u.prepare_query = CloudflareImagesUtilities::PrepareQuery
+  u.graphql_body = CloudflareImagesUtilities::GraphqlBody
+  u.graphql_errors = CloudflareImagesUtilities::GraphqlErrors
+  u.result_basic = CloudflareImagesUtilities::ResultBasic
+  u.result_body = CloudflareImagesUtilities::ResultBody
+  u.result_headers = CloudflareImagesUtilities::ResultHeaders
+  u.transform_request = CloudflareImagesUtilities::TransformRequest
+  u.transform_response = CloudflareImagesUtilities::TransformResponse
+}

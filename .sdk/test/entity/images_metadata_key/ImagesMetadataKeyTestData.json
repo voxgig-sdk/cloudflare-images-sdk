@@ -1,0 +1,44 @@
+{
+  "existing": {
+    "images_metadata_key": {
+      "IMAGES_METADATA_KEY00": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01"
+      },
+      "IMAGES_METADATA_KEY01": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01"
+      },
+      "IMAGES_METADATA_KEY02": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "images_metadata_key": {
+      "images_metadata_key_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/images/v2/metadata/keys": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

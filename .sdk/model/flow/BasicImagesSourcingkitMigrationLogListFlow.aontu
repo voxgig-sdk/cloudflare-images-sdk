@@ -1,0 +1,27 @@
+# BasicImagesSourcingkitMigrationLogListFlow
+
+main: kit: flow: BasicImagesSourcingkitMigrationLogListFlow:
+{
+  entity: "images_sourcingkit_migration_log_list",
+  kind: "basic",
+  name: "BasicImagesSourcingkitMigrationLogListFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01",
+        migration_id: "migration01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "images_sourcingkit_migration_log_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicImagesSourcingkitMigrationLogListFlow"
+}

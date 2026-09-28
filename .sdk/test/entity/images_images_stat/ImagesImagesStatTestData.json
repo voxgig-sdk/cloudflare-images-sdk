@@ -1,0 +1,35 @@
+{
+  "existing": {
+    "images_images_stat": {
+      "IMAGES_IMAGES_STAT00": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "id": "IMAGES_IMAGES_STAT00"
+      },
+      "IMAGES_IMAGES_STAT01": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "id": "IMAGES_IMAGES_STAT01"
+      },
+      "IMAGES_IMAGES_STAT02": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "id": "IMAGES_IMAGES_STAT02"
+      }
+    }
+  },
+  "new": {
+    "images_images_stat": {
+      "images_images_stat_ref01": {
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/images/v1/stats": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

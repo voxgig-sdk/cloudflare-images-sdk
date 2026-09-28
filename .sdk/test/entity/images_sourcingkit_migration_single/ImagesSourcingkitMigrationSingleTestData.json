@@ -1,0 +1,48 @@
+{
+  "existing": {
+    "images_sourcingkit_migration_single": {
+      "IMAGES_SOURCINGKIT_MIGRATION_SINGLE00": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "migration_id": "MIGRATION01",
+        "id": "IMAGES_SOURCINGKIT_MIGRATION_SINGLE00"
+      },
+      "IMAGES_SOURCINGKIT_MIGRATION_SINGLE01": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "migration_id": "MIGRATION01",
+        "id": "IMAGES_SOURCINGKIT_MIGRATION_SINGLE01"
+      },
+      "IMAGES_SOURCINGKIT_MIGRATION_SINGLE02": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "migration_id": "MIGRATION01",
+        "id": "IMAGES_SOURCINGKIT_MIGRATION_SINGLE02"
+      }
+    }
+  },
+  "new": {
+    "images_sourcingkit_migration_single": {
+      "images_sourcingkit_migration_single_ref01": {
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/lifecycle/abort": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/lifecycle/start": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

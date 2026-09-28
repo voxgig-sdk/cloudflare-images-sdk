@@ -1,0 +1,26 @@
+# BasicImagesSourcingkitSourceListFlow
+
+main: kit: flow: BasicImagesSourcingkitSourceListFlow:
+{
+  entity: "images_sourcingkit_source_list",
+  kind: "basic",
+  name: "BasicImagesSourcingkitSourceListFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "images_sourcingkit_source_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicImagesSourcingkitSourceListFlow"
+}

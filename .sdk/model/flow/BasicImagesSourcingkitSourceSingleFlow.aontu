@@ -1,0 +1,33 @@
+# BasicImagesSourcingkitSourceSingleFlow
+
+main: kit: flow: BasicImagesSourcingkitSourceSingleFlow:
+{
+  entity: "images_sourcingkit_source_single",
+  kind: "basic",
+  name: "BasicImagesSourcingkitSourceSingleFlow",
+  step: [
+    {
+      i: {
+        ref: "images_sourcingkit_source_single_ref01",
+        srcdatavar: "images_sourcingkit_source_single_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "images_sourcingkit_source_single01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-images_sourcingkit_source_single_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicImagesSourcingkitSourceSingleFlow"
+}

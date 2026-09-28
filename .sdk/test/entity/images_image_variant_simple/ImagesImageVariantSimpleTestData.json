@@ -1,0 +1,56 @@
+{
+  "existing": {
+    "images_image_variant_simple": {
+      "IMAGES_IMAGE_VARIANT_SIMPLE00": {
+        "id": "IMAGES_IMAGE_VARIANT_SIMPLE00",
+        "neverRequireSignedURLs": false,
+        "options": {},
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "variant_id": "VARIANT01"
+      },
+      "IMAGES_IMAGE_VARIANT_SIMPLE01": {
+        "id": "IMAGES_IMAGE_VARIANT_SIMPLE01",
+        "neverRequireSignedURLs": false,
+        "options": {},
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "variant_id": "VARIANT01"
+      },
+      "IMAGES_IMAGE_VARIANT_SIMPLE02": {
+        "id": "IMAGES_IMAGE_VARIANT_SIMPLE02",
+        "neverRequireSignedURLs": false,
+        "options": {},
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "variant_id": "VARIANT01"
+      }
+    }
+  },
+  "new": {
+    "images_image_variant_simple": {
+      "images_image_variant_simple_ref01": {
+        "neverRequireSignedURLs": false,
+        "options": {},
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/images/v1/variants": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/images/v1/variants/{variant_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/images/v1/variants/{variant_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+# BasicImagesImagesListFlow
+
+main: kit: flow: BasicImagesImagesListFlow:
+{
+  entity: "images_images_list",
+  kind: "basic",
+  name: "BasicImagesImagesListFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "images_images_list_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "images_images_list_ref01",
+        srcdatavar: "images_images_list_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "images_images_list01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-images_images_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicImagesImagesListFlow"
+}

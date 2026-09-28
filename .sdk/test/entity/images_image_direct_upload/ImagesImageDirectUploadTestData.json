@@ -1,0 +1,40 @@
+{
+  "existing": {
+    "images_image_direct_upload": {
+      "IMAGES_IMAGE_DIRECT_UPLOAD00": {
+        "expiry": "sa",
+        "account_id": "ACCOUNT01",
+        "id": "IMAGES_IMAGE_DIRECT_UPLOAD00"
+      },
+      "IMAGES_IMAGE_DIRECT_UPLOAD01": {
+        "expiry": "s14",
+        "account_id": "ACCOUNT01",
+        "id": "IMAGES_IMAGE_DIRECT_UPLOAD01"
+      },
+      "IMAGES_IMAGE_DIRECT_UPLOAD02": {
+        "expiry": "s1e",
+        "account_id": "ACCOUNT01",
+        "id": "IMAGES_IMAGE_DIRECT_UPLOAD02"
+      }
+    }
+  },
+  "new": {
+    "images_image_direct_upload": {
+      "images_image_direct_upload_ref01": {
+        "expiry": "s28"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/images/v1/direct_upload": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/images/v2/direct_upload": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

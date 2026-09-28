@@ -1,0 +1,38 @@
+{
+  "existing": {
+    "images_image_variant_flat": {
+      "IMAGES_IMAGE_VARIANT_FLAT00": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "variant_id": "VARIANT01",
+        "id": "IMAGES_IMAGE_VARIANT_FLAT00"
+      },
+      "IMAGES_IMAGE_VARIANT_FLAT01": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "variant_id": "VARIANT01",
+        "id": "IMAGES_IMAGE_VARIANT_FLAT01"
+      },
+      "IMAGES_IMAGE_VARIANT_FLAT02": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "variant_id": "VARIANT01",
+        "id": "IMAGES_IMAGE_VARIANT_FLAT02"
+      }
+    }
+  },
+  "new": {
+    "images_image_variant_flat": {
+      "images_image_variant_flat_ref01": {
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/images/v1/variants/{variant_id}/flat": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "existing": {
+    "images_sourcingkit_connectivity_check": {
+      "IMAGES_SOURCINGKIT_CONNECTIVITY_CHECK00": {
+        "account": "s3c",
+        "bucket": "s3d",
+        "region": "s3e",
+        "result": {},
+        "secret": {},
+        "vendor": "s41",
+        "account_id": "ACCOUNT01",
+        "source_id": "SOURCE01",
+        "id": "IMAGES_SOURCINGKIT_CONNECTIVITY_CHECK00"
+      },
+      "IMAGES_SOURCINGKIT_CONNECTIVITY_CHECK01": {
+        "account": "s78",
+        "bucket": "s79",
+        "region": "s7a",
+        "result": {},
+        "secret": {},
+        "vendor": "s7d",
+        "account_id": "ACCOUNT01",
+        "source_id": "SOURCE01",
+        "id": "IMAGES_SOURCINGKIT_CONNECTIVITY_CHECK01"
+      },
+      "IMAGES_SOURCINGKIT_CONNECTIVITY_CHECK02": {
+        "account": "sb4",
+        "bucket": "sb5",
+        "region": "sb6",
+        "result": {},
+        "secret": {},
+        "vendor": "sb9",
+        "account_id": "ACCOUNT01",
+        "source_id": "SOURCE01",
+        "id": "IMAGES_SOURCINGKIT_CONNECTIVITY_CHECK02"
+      }
+    }
+  },
+  "new": {
+    "images_sourcingkit_connectivity_check": {
+      "images_sourcingkit_connectivity_check_ref01": {
+        "account": "sf0",
+        "bucket": "sf1",
+        "region": "sf2",
+        "result": {},
+        "secret": {},
+        "vendor": "sf5"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/images/v2/sourcingkit/sources/connectivity-precheck": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}/connectivity": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

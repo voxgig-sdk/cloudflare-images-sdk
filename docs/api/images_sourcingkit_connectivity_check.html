@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ImagesSourcingkitConnectivityCheck | Cloudflare Images</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Images<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-images-sdk">voxgig-sdk/cloudflare-images-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Images</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/cloudflare_image.html">CloudflareImage</a>
+<a href="../api/image.html">Image</a>
+<a href="../api/images_deleted.html">ImagesDeleted</a>
+<a href="../api/images_image_direct_upload.html">ImagesImageDirectUpload</a>
+<a href="../api/images_image_key_response_collection.html">ImagesImageKeyResponseCollection</a>
+<a href="../api/images_image_response_single.html">ImagesImageResponseSingle</a>
+<a href="../api/images_image_variant_flat.html">ImagesImageVariantFlat</a>
+<a href="../api/images_image_variant_list.html">ImagesImageVariantList</a>
+<a href="../api/images_image_variant_simple.html">ImagesImageVariantSimple</a>
+<a href="../api/images_images_list.html">ImagesImagesList</a>
+<a href="../api/images_images_stat.html">ImagesImagesStat</a>
+<a href="../api/images_metadata_key.html">ImagesMetadataKey</a>
+<a aria-current="page" href="../api/images_sourcingkit_connectivity_check.html">ImagesSourcingkitConnectivityCheck</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idimagesv2sourcingkitsourcesconnectivity-precheck">POST /accounts/{account_id}/images/v2/sourcingkit/sources/connectivity-precheck</a>
+<a class="nav-section" href="#get-accountsaccount_idimagesv2sourcingkitsourcessource_idconnectivity">GET /accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}/connectivity</a></div>
+<a href="../api/images_sourcingkit_migration.html">ImagesSourcingkitMigration</a>
+<a href="../api/images_sourcingkit_migration_list.html">ImagesSourcingkitMigrationList</a>
+<a href="../api/images_sourcingkit_migration_log_list.html">ImagesSourcingkitMigrationLogList</a>
+<a href="../api/images_sourcingkit_migration_progress.html">ImagesSourcingkitMigrationProgress</a>
+<a href="../api/images_sourcingkit_migration_single.html">ImagesSourcingkitMigrationSingle</a>
+<a href="../api/images_sourcingkit_source.html">ImagesSourcingkitSource</a>
+<a href="../api/images_sourcingkit_source_list.html">ImagesSourcingkitSourceList</a>
+<a href="../api/images_sourcingkit_source_single.html">ImagesSourcingkitSourceSingle</a>
+<a href="../api/migration.html">Migration</a>
+<a href="../api/source.html">Source</a>
+<a href="../api/v1n.html">V1n</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="imagessourcingkitconnectivitycheck">ImagesSourcingkitConnectivityCheck</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idimagesv2sourcingkitsourcesconnectivity-precheck"><code>/accounts/{account_id}/images/v2/sourcingkit/sources/connectivity-precheck</code></a></td>
+<td><code>create</code></td>
+<td>Connectivity precheck response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idimagesv2sourcingkitsourcessource_idconnectivity"><code>/accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}/connectivity</code></a></td>
+<td><code>load</code></td>
+<td>Source connectivity status response</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">images_sourcingkit_connectivity_check, err := client.ImagesSourcingkitConnectivityCheck(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;source_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(images_sourcingkit_connectivity_check)
+created, err := client.ImagesSourcingkitConnectivityCheck(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;bucket&quot;: &quot;example&quot;, &quot;secret&quot;: map[string]any{}, &quot;vendor&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local images_sourcingkit_connectivity_check, err = client:ImagesSourcingkitConnectivityCheck():load({ account_id = &quot;example&quot;, source_id = &quot;example&quot; })
+local created, err = client:ImagesSourcingkitConnectivityCheck():create({ account_id = &quot;example&quot;, bucket = &quot;example&quot;, secret = {}, vendor = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$images_sourcingkit_connectivity_check = $client-&gt;ImagesSourcingkitConnectivityCheck()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;source_id&quot; =&gt; &quot;example&quot;]);
+$created = $client-&gt;ImagesSourcingkitConnectivityCheck()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;bucket&quot; =&gt; &quot;example&quot;, &quot;secret&quot; =&gt; [], &quot;vendor&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">images_sourcingkit_connectivity_check = client.ImagesSourcingkitConnectivityCheck().load({&quot;account_id&quot;: &quot;example&quot;, &quot;source_id&quot;: &quot;example&quot;})
+created = client.ImagesSourcingkitConnectivityCheck().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;bucket&quot;: &quot;example&quot;, &quot;secret&quot;: {}, &quot;vendor&quot;: &quot;example&quot; })
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">images_sourcingkit_connectivity_check = client.ImagesSourcingkitConnectivityCheck.load({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;source_id&quot; =&gt; &quot;example&quot; })
+created = client.ImagesSourcingkitConnectivityCheck.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;bucket&quot; =&gt; &quot;example&quot;, &quot;secret&quot; =&gt; {}, &quot;vendor&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const images_sourcingkit_connectivity_check = await client.ImagesSourcingkitConnectivityCheck().load({ account_id: &quot;example&quot;, source_id: &quot;example&quot; })
+const created = await client.ImagesSourcingkitConnectivityCheck().create({ account_id: &quot;example&quot;, bucket: &quot;example&quot;, secret: {}, vendor: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Account identifier for the bucket (required for R2 vendor).</td>
+</tr>
+<tr>
+<td><code>bucket</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The name of the storage bucket.</td>
+</tr>
+<tr>
+<td><code>region</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The region hint for the bucket (S3 only).</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Result</td>
+</tr>
+<tr>
+<td><code>secret</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Storage credentials for accessing the bucket.</td>
+</tr>
+<tr>
+<td><code>vendor</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The cloud storage vendor of the source bucket.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idimagesv2sourcingkitsourcesconnectivity-precheck" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/images/v2/sourcingkit/sources/connectivity-precheck</h3>
+<p>Operation ID: <code>cloudflare-images-sourcingkit-precheck-source-connectivity</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Account identifier for the bucket (required for R2 vendor).</td>
+</tr>
+<tr>
+<td><code>bucket</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The name of the storage bucket.</td>
+</tr>
+<tr>
+<td><code>region</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The region hint for the bucket (S3 only).</td>
+</tr>
+<tr>
+<td><code>secret</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Storage credentials for accessing the bucket.</td>
+</tr>
+<tr>
+<td><code>vendor</code></td>
+<td><code>enum: s3, r2</code></td>
+<td>Yes</td>
+<td>The cloud storage vendor of the source bucket.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-connectivity-precheck-response" class="status" data-status="2xx">200: Connectivity precheck response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object</code>.</p>
+<h5 id="4xx-connectivity-precheck-response-failure">4XX: Connectivity precheck response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object and object</code>.</p>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idimagesv2sourcingkitsourcessource_idconnectivity" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}/connectivity</h3>
+<p>Operation ID: <code>cloudflare-images-sourcingkit-get-source-connectivity</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>source_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-source-connectivity-status-response" class="status" data-status="2xx">200: Source connectivity status response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object</code>.</p>
+<h5 id="4xx-source-connectivity-status-response-failure">4XX: Source connectivity status response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object and object</code>.</p>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

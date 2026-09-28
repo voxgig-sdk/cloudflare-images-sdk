@@ -1,0 +1,26 @@
+# BasicImagesImageVariantListFlow
+
+main: kit: flow: BasicImagesImageVariantListFlow:
+{
+  entity: "images_image_variant_list",
+  kind: "basic",
+  name: "BasicImagesImageVariantListFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "images_image_variant_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicImagesImageVariantListFlow"
+}

@@ -1,0 +1,9 @@
+# BasicImagesDeletedFlow
+
+main: kit: flow: BasicImagesDeletedFlow:
+{
+  entity: "images_deleted",
+  kind: "basic",
+  name: "BasicImagesDeletedFlow",
+  "key$": "BasicImagesDeletedFlow"
+}

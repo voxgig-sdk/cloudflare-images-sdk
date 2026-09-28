@@ -1,0 +1,9 @@
+# BasicMigrationFlow
+
+main: kit: flow: BasicMigrationFlow:
+{
+  entity: "migration",
+  kind: "basic",
+  name: "BasicMigrationFlow",
+  "key$": "BasicMigrationFlow"
+}

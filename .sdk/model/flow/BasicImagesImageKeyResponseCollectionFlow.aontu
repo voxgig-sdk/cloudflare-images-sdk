@@ -1,0 +1,48 @@
+# BasicImagesImageKeyResponseCollectionFlow
+
+main: kit: flow: BasicImagesImageKeyResponseCollectionFlow:
+{
+  entity: "images_image_key_response_collection",
+  kind: "basic",
+  name: "BasicImagesImageKeyResponseCollectionFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "images_image_key_response_collection_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      d: {
+        account_id: "account01"
+      }
+
+      i: {
+        ref: "images_image_key_response_collection_ref01",
+        srcdatavar: "images_image_key_response_collection_ref01_data",
+        suffix: "_up0"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-images_image_key_response_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicImagesImageKeyResponseCollectionFlow"
+}

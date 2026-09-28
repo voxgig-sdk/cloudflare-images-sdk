@@ -1,0 +1,22 @@
+# BasicImagesSourcingkitMigrationFlow
+
+main: kit: flow: BasicImagesSourcingkitMigrationFlow:
+{
+  entity: "images_sourcingkit_migration",
+  kind: "basic",
+  name: "BasicImagesSourcingkitMigrationFlow",
+  step: [
+    {
+      i: {
+        ref: "images_sourcingkit_migration_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicImagesSourcingkitMigrationFlow"
+}

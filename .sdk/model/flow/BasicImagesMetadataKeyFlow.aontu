@@ -1,0 +1,26 @@
+# BasicImagesMetadataKeyFlow
+
+main: kit: flow: BasicImagesMetadataKeyFlow:
+{
+  entity: "images_metadata_key",
+  kind: "basic",
+  name: "BasicImagesMetadataKeyFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "images_metadata_key_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicImagesMetadataKeyFlow"
+}

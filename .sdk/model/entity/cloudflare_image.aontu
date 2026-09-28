@@ -1,0 +1,85 @@
+# Entity: cloudflare_image
+
+main: kit: entity: cloudflare_image: {
+
+  alias: field: {}
+
+  name: "cloudflare_image"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/images/v1/{image_id}/blob"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "107b9558-dd06-4bbd-5fef-9c2c16bb7900"
+                k: "param"
+                n: "v1_id"
+                or: "image_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/images/v1/{image_id}/blob"
+          q: {
+            exist: [
+              "account_id"
+              "v1_id"
+            ]
+          }
+          r: {
+            param: {
+              image_id: "v1_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "images"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              var: "v1_id"
+            }
+            {
+              lit: "blob"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

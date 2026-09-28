@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ImagesImageResponseSingle | Cloudflare Images</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Images<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-images-sdk">voxgig-sdk/cloudflare-images-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Images</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/cloudflare_image.html">CloudflareImage</a>
+<a href="../api/image.html">Image</a>
+<a href="../api/images_deleted.html">ImagesDeleted</a>
+<a href="../api/images_image_direct_upload.html">ImagesImageDirectUpload</a>
+<a href="../api/images_image_key_response_collection.html">ImagesImageKeyResponseCollection</a>
+<a aria-current="page" href="../api/images_image_response_single.html">ImagesImageResponseSingle</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idimagesv1">POST /accounts/{account_id}/images/v1</a>
+<a class="nav-section" href="#get-accountsaccount_idimagesv1image_id">GET /accounts/{account_id}/images/v1/{image_id}</a>
+<a class="nav-section" href="#patch-accountsaccount_idimagesv1image_id">PATCH /accounts/{account_id}/images/v1/{image_id}</a></div>
+<a href="../api/images_image_variant_flat.html">ImagesImageVariantFlat</a>
+<a href="../api/images_image_variant_list.html">ImagesImageVariantList</a>
+<a href="../api/images_image_variant_simple.html">ImagesImageVariantSimple</a>
+<a href="../api/images_images_list.html">ImagesImagesList</a>
+<a href="../api/images_images_stat.html">ImagesImagesStat</a>
+<a href="../api/images_metadata_key.html">ImagesMetadataKey</a>
+<a href="../api/images_sourcingkit_connectivity_check.html">ImagesSourcingkitConnectivityCheck</a>
+<a href="../api/images_sourcingkit_migration.html">ImagesSourcingkitMigration</a>
+<a href="../api/images_sourcingkit_migration_list.html">ImagesSourcingkitMigrationList</a>
+<a href="../api/images_sourcingkit_migration_log_list.html">ImagesSourcingkitMigrationLogList</a>
+<a href="../api/images_sourcingkit_migration_progress.html">ImagesSourcingkitMigrationProgress</a>
+<a href="../api/images_sourcingkit_migration_single.html">ImagesSourcingkitMigrationSingle</a>
+<a href="../api/images_sourcingkit_source.html">ImagesSourcingkitSource</a>
+<a href="../api/images_sourcingkit_source_list.html">ImagesSourcingkitSourceList</a>
+<a href="../api/images_sourcingkit_source_single.html">ImagesSourcingkitSourceSingle</a>
+<a href="../api/migration.html">Migration</a>
+<a href="../api/source.html">Source</a>
+<a href="../api/v1n.html">V1n</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="imagesimageresponsesingle">ImagesImageResponseSingle</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idimagesv1"><code>/accounts/{account_id}/images/v1</code></a></td>
+<td><code>create</code></td>
+<td>Upload an image response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idimagesv1image_id"><code>/accounts/{account_id}/images/v1/{image_id}</code></a></td>
+<td><code>load</code></td>
+<td>Image details response</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idimagesv1image_id"><code>/accounts/{account_id}/images/v1/{image_id}</code></a></td>
+<td><code>update</code></td>
+<td>Update image response</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">images_image_response_single, err := client.ImagesImageResponseSingle(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;image_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(images_image_response_single)
+created, err := client.ImagesImageResponseSingle(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.ImagesImageResponseSingle(nil).Update(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;image_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local images_image_response_single, err = client:ImagesImageResponseSingle():load({ account_id = &quot;example&quot;, image_id = &quot;example&quot; })
+local created, err = client:ImagesImageResponseSingle():create({ account_id = &quot;example&quot; })
+local updated, err = client:ImagesImageResponseSingle():update({ account_id = &quot;example&quot;, image_id = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$images_image_response_single = $client-&gt;ImagesImageResponseSingle()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;image_id&quot; =&gt; &quot;example&quot;]);
+$created = $client-&gt;ImagesImageResponseSingle()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;ImagesImageResponseSingle()-&gt;update([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;image_id&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">images_image_response_single = client.ImagesImageResponseSingle().load({&quot;account_id&quot;: &quot;example&quot;, &quot;image_id&quot;: &quot;example&quot;})
+created = client.ImagesImageResponseSingle().create({ &quot;account_id&quot;: &quot;example&quot; })
+updated = client.ImagesImageResponseSingle().update({&quot;account_id&quot;: &quot;example&quot;, &quot;image_id&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">images_image_response_single = client.ImagesImageResponseSingle.load({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;image_id&quot; =&gt; &quot;example&quot; })
+created = client.ImagesImageResponseSingle.create({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+updated = client.ImagesImageResponseSingle.update({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;image_id&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const images_image_response_single = await client.ImagesImageResponseSingle().load({ account_id: &quot;example&quot;, image_id: &quot;example&quot; })
+const created = await client.ImagesImageResponseSingle().create({ account_id: &quot;example&quot; })
+const updated = await client.ImagesImageResponseSingle().update({ account_id: &quot;example&quot;, image_id: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>creator</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Can set the creator field with an internal user ID.</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>User modifiable key-value store.</td>
+</tr>
+<tr>
+<td><code>requireSignedURLs</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Indicates whether the image can be accessed using only its UID.</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Result</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idimagesv1" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/images/v1</h3>
+<p>Operation ID: <code>cloudflare-images-upload-an-image-via-url</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>multipart/form-data</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>creator</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Can set the creator field with an internal user ID.</td>
+</tr>
+<tr>
+<td><code>file</code></td>
+<td><code>string (binary)</code></td>
+<td>No</td>
+<td>An image binary data. Only needed when type is uploading a file.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>An optional custom unique identifier for your image.</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>User modifiable key-value store. Can use used for keeping references to another system of record for managing images.</td>
+</tr>
+<tr>
+<td><code>requireSignedURLs</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Indicates whether the image requires a signature token for the access.</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A URL to fetch an image from origin. Only needed when type is uploading from a URL.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-upload-an-image-response" class="status" data-status="2xx">200: Upload an image response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object</code>.</p>
+<h5 id="4xx-upload-an-image-response-failure">4XX: Upload an image response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object and object</code>.</p>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idimagesv1image_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/images/v1/{image_id}</h3>
+<p>Operation ID: <code>cloudflare-images-image-details</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>image_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-image-details-response" class="status" data-status="2xx">200: Image details response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object</code>.</p>
+<h5 id="4xx-image-details-response-failure">4XX: Image details response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object and object</code>.</p>
+<h2 id="update">update</h2>
+<h3 id="patch-accountsaccount_idimagesv1image_id" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/images/v1/{image_id}</h3>
+<p>Operation ID: <code>cloudflare-images-update-image</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>image_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>creator</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Can set the creator field with an internal user ID.</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>User modifiable key-value store. Can be used for keeping references to another system of record for managing images. No change if not specified.</td>
+</tr>
+<tr>
+<td><code>requireSignedURLs</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Indicates whether the image can be accessed using only its UID. If set to <code>true</code>, a signed token needs to be generated with a signing key to view the image. Returns a new UID on a change. No change if not specified.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-update-image-response" class="status" data-status="2xx">200: Update image response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object</code>.</p>
+<h5 id="4xx-update-image-response-failure">4XX: Update image response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object and object</code>.</p>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

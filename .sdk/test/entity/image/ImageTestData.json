@@ -1,0 +1,48 @@
+{
+  "existing": {
+    "image": {
+      "IMAGE00": {
+        "etag": "s1e",
+        "flows": [],
+        "version": 32,
+        "zone_id": "ZONE01",
+        "id": "IMAGE00"
+      },
+      "IMAGE01": {
+        "etag": "s3c",
+        "flows": [],
+        "version": 62,
+        "zone_id": "ZONE01",
+        "id": "IMAGE01"
+      },
+      "IMAGE02": {
+        "etag": "s5a",
+        "flows": [],
+        "version": 92,
+        "zone_id": "ZONE01",
+        "id": "IMAGE02"
+      }
+    }
+  },
+  "new": {
+    "image": {
+      "image_ref01": {
+        "etag": "s78",
+        "flows": [],
+        "version": 122
+      }
+    }
+  },
+  "requests": {
+    "GET /zones/{zone_id}/images/v1/flows": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /zones/{zone_id}/images/v1/flows": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,189 @@
+# Entity: images_sourcingkit_connectivity_check
+
+main: kit: entity: images_sourcingkit_connectivity_check: {
+
+  alias: field: {}
+
+  fields: {
+    account: {
+      h: "Account"
+      n: "account"
+      r: false
+      sh: "Account identifier for the bucket (required for R2 vendor)."
+      t: "`$STRING`"
+    }
+    bucket: {
+      h: "Bucket"
+      n: "bucket"
+      r: true
+      sh: "The name of the storage bucket."
+      t: "`$STRING`"
+    }
+    region: {
+      h: "Region"
+      n: "region"
+      r: false
+      sh: "The region hint for the bucket (S3 only)."
+      t: "`$STRING`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$OBJECT`"
+    }
+    secret: {
+      h: "Secret"
+      n: "secret"
+      r: true
+      sh: "Storage credentials for accessing the bucket."
+      t: "`$OBJECT`"
+      wo: true
+    }
+    vendor: {
+      h: "Vendor"
+      n: "vendor"
+      r: true
+      sh: "The cloud storage vendor of the source bucket."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "images_sourcingkit_connectivity_check"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/images/v2/sourcingkit/sources/connectivity-precheck"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/images/v2/sourcingkit/sources/connectivity-precheck"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "images"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "sourcingkit"
+            }
+            {
+              lit: "sources"
+            }
+            {
+              lit: "connectivity-precheck"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}/connectivity"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "5ca167e6-4e40-4ced-a209-ca1b9dd6a265"
+                k: "param"
+                n: "source_id"
+                or: "source_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}/connectivity"
+          q: {
+            exist: [
+              "account_id"
+              "source_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "images"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "sourcingkit"
+            }
+            {
+              lit: "sources"
+            }
+            {
+              var: "source_id"
+            }
+            {
+              lit: "connectivity"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.source")]
+  ]
+
+}

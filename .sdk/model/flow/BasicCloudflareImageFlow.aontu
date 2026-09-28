@@ -1,0 +1,33 @@
+# BasicCloudflareImageFlow
+
+main: kit: flow: BasicCloudflareImageFlow:
+{
+  entity: "cloudflare_image",
+  kind: "basic",
+  name: "BasicCloudflareImageFlow",
+  step: [
+    {
+      i: {
+        ref: "cloudflare_image_ref01",
+        srcdatavar: "cloudflare_image_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "cloudflare_image01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-cloudflare_image_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCloudflareImageFlow"
+}

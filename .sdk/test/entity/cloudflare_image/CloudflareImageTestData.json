@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "cloudflare_image": {
+      "CLOUDFLARE_IMAGE00": {
+        "account_id": "ACCOUNT01",
+        "v1_id": "V101",
+        "id": "CLOUDFLARE_IMAGE00"
+      },
+      "CLOUDFLARE_IMAGE01": {
+        "account_id": "ACCOUNT01",
+        "v1_id": "V101",
+        "id": "CLOUDFLARE_IMAGE01"
+      },
+      "CLOUDFLARE_IMAGE02": {
+        "account_id": "ACCOUNT01",
+        "v1_id": "V101",
+        "id": "CLOUDFLARE_IMAGE02"
+      }
+    }
+  },
+  "new": {
+    "cloudflare_image": {
+      "cloudflare_image_ref01": {}
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/images/v1/{image_id}/blob": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

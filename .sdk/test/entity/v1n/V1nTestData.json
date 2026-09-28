@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "v1n": {
+      "V1N00": {
+        "account_id": "ACCOUNT01",
+        "image_id": "IMAGE01",
+        "id": "V1N00"
+      },
+      "V1N01": {
+        "account_id": "ACCOUNT01",
+        "image_id": "IMAGE01",
+        "id": "V1N01"
+      },
+      "V1N02": {
+        "account_id": "ACCOUNT01",
+        "image_id": "IMAGE01",
+        "id": "V1N02"
+      }
+    }
+  },
+  "new": {
+    "v1n": {
+      "v1n_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /accounts/{account_id}/images/v1/{image_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

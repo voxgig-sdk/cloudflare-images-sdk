@@ -1,0 +1,22 @@
+# BasicImagesImageDirectUploadFlow
+
+main: kit: flow: BasicImagesImageDirectUploadFlow:
+{
+  entity: "images_image_direct_upload",
+  kind: "basic",
+  name: "BasicImagesImageDirectUploadFlow",
+  step: [
+    {
+      i: {
+        ref: "images_image_direct_upload_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicImagesImageDirectUploadFlow"
+}

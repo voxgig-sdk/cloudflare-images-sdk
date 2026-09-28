@@ -1,0 +1,107 @@
+# Entity: images_sourcingkit_migration
+
+main: kit: entity: images_sourcingkit_migration: {
+
+  alias: field: {}
+
+  fields: {
+    conflictBehaviour: {
+      h: "Conflict Behaviour"
+      n: "conflictBehaviour"
+      r: false
+      sh: "How to handle objects that already exist at the destination."
+      t: "`$STRING`"
+    }
+    excludedContentTypes: {
+      h: "Excluded Content Types"
+      n: "excludedContentTypes"
+      r: false
+      sh: "Content types to skip during migration."
+      t: "`$ARRAY`"
+    }
+    pathPrefix: {
+      h: "Path Prefix"
+      n: "pathPrefix"
+      r: false
+      sh: "Prefix to prepend to image custom IDs."
+      t: "`$STRING`"
+    }
+    rootDirectory: {
+      h: "Root Directory"
+      n: "rootDirectory"
+      r: false
+      sh: "Only import objects under this prefix in the source bucket."
+      t: "`$STRING`"
+    }
+    sourceId: {
+      fo: "uuid"
+      h: "Source Id"
+      n: "sourceId"
+      r: true
+      sh: "The identifier of the source to migrate from."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "images_sourcingkit_migration"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/images/v2/sourcingkit/migrations"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/images/v2/sourcingkit/migrations"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "images"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "sourcingkit"
+            }
+            {
+              lit: "migrations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

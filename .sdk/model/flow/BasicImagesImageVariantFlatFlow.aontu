@@ -1,0 +1,33 @@
+# BasicImagesImageVariantFlatFlow
+
+main: kit: flow: BasicImagesImageVariantFlatFlow:
+{
+  entity: "images_image_variant_flat",
+  kind: "basic",
+  name: "BasicImagesImageVariantFlatFlow",
+  step: [
+    {
+      i: {
+        ref: "images_image_variant_flat_ref01",
+        srcdatavar: "images_image_variant_flat_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "images_image_variant_flat01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-images_image_variant_flat_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicImagesImageVariantFlatFlow"
+}

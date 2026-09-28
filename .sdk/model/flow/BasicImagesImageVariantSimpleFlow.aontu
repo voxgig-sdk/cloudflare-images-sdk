@@ -1,0 +1,67 @@
+# BasicImagesImageVariantSimpleFlow
+
+main: kit: flow: BasicImagesImageVariantSimpleFlow:
+{
+  entity: "images_image_variant_simple",
+  kind: "basic",
+  name: "BasicImagesImageVariantSimpleFlow",
+  step: [
+    {
+      i: {
+        ref: "images_image_variant_simple_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+
+    {
+      d: {
+        account_id: "account01"
+      }
+
+      i: {
+        ref: "images_image_variant_simple_ref01",
+        srcdatavar: "images_image_variant_simple_ref01_data",
+        suffix: "_up0"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-images_image_variant_simple_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "images_image_variant_simple_ref01",
+        srcdatavar: "images_image_variant_simple_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "images_image_variant_simple01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-images_image_variant_simple_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicImagesImageVariantSimpleFlow"
+}

@@ -1,0 +1,9 @@
+# BasicSourceFlow
+
+main: kit: flow: BasicSourceFlow:
+{
+  entity: "source",
+  kind: "basic",
+  name: "BasicSourceFlow",
+  "key$": "BasicSourceFlow"
+}

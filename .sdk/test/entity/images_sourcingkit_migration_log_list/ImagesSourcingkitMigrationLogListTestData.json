@@ -1,0 +1,47 @@
+{
+  "existing": {
+    "images_sourcingkit_migration_log_list": {
+      "IMAGES_SOURCINGKIT_MIGRATION_LOG_LIST00": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "migration_id": "MIGRATION01"
+      },
+      "IMAGES_SOURCINGKIT_MIGRATION_LOG_LIST01": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "migration_id": "MIGRATION01"
+      },
+      "IMAGES_SOURCINGKIT_MIGRATION_LOG_LIST02": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "migration_id": "MIGRATION01"
+      }
+    }
+  },
+  "new": {
+    "images_sourcingkit_migration_log_list": {
+      "images_sourcingkit_migration_log_list_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/logs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

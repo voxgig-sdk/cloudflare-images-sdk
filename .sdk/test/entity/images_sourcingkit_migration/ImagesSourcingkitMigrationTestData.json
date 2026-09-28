@@ -1,0 +1,51 @@
+{
+  "existing": {
+    "images_sourcingkit_migration": {
+      "IMAGES_SOURCINGKIT_MIGRATION00": {
+        "conflictBehaviour": "s32",
+        "excludedContentTypes": [],
+        "pathPrefix": "s34",
+        "rootDirectory": "s35",
+        "sourceId": "s36",
+        "account_id": "ACCOUNT01",
+        "id": "IMAGES_SOURCINGKIT_MIGRATION00"
+      },
+      "IMAGES_SOURCINGKIT_MIGRATION01": {
+        "conflictBehaviour": "s64",
+        "excludedContentTypes": [],
+        "pathPrefix": "s66",
+        "rootDirectory": "s67",
+        "sourceId": "s68",
+        "account_id": "ACCOUNT01",
+        "id": "IMAGES_SOURCINGKIT_MIGRATION01"
+      },
+      "IMAGES_SOURCINGKIT_MIGRATION02": {
+        "conflictBehaviour": "s96",
+        "excludedContentTypes": [],
+        "pathPrefix": "s98",
+        "rootDirectory": "s99",
+        "sourceId": "s9a",
+        "account_id": "ACCOUNT01",
+        "id": "IMAGES_SOURCINGKIT_MIGRATION02"
+      }
+    }
+  },
+  "new": {
+    "images_sourcingkit_migration": {
+      "images_sourcingkit_migration_ref01": {
+        "conflictBehaviour": "sc8",
+        "excludedContentTypes": [],
+        "pathPrefix": "sca",
+        "rootDirectory": "scb",
+        "sourceId": "scc"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/images/v2/sourcingkit/migrations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

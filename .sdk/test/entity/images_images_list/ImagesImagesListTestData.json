@@ -1,0 +1,52 @@
+{
+  "existing": {
+    "images_images_list": {
+      "IMAGES_IMAGES_LIST00": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "id": "IMAGES_IMAGES_LIST00"
+      },
+      "IMAGES_IMAGES_LIST01": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "id": "IMAGES_IMAGES_LIST01"
+      },
+      "IMAGES_IMAGES_LIST02": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "id": "IMAGES_IMAGES_LIST02"
+      }
+    }
+  },
+  "new": {
+    "images_images_list": {
+      "images_images_list_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/images/v1": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/images/v2": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

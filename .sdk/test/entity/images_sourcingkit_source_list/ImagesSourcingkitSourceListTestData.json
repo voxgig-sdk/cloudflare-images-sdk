@@ -1,0 +1,44 @@
+{
+  "existing": {
+    "images_sourcingkit_source_list": {
+      "IMAGES_SOURCINGKIT_SOURCE_LIST00": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01"
+      },
+      "IMAGES_SOURCINGKIT_SOURCE_LIST01": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01"
+      },
+      "IMAGES_SOURCINGKIT_SOURCE_LIST02": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "images_sourcingkit_source_list": {
+      "images_sourcingkit_source_list_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/images/v2/sourcingkit/sources": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

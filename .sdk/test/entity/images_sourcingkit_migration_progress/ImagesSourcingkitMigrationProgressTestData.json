@@ -1,0 +1,38 @@
+{
+  "existing": {
+    "images_sourcingkit_migration_progress": {
+      "IMAGES_SOURCINGKIT_MIGRATION_PROGRESS00": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "migration_id": "MIGRATION01",
+        "id": "IMAGES_SOURCINGKIT_MIGRATION_PROGRESS00"
+      },
+      "IMAGES_SOURCINGKIT_MIGRATION_PROGRESS01": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "migration_id": "MIGRATION01",
+        "id": "IMAGES_SOURCINGKIT_MIGRATION_PROGRESS01"
+      },
+      "IMAGES_SOURCINGKIT_MIGRATION_PROGRESS02": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "migration_id": "MIGRATION01",
+        "id": "IMAGES_SOURCINGKIT_MIGRATION_PROGRESS02"
+      }
+    }
+  },
+  "new": {
+    "images_sourcingkit_migration_progress": {
+      "images_sourcingkit_migration_progress_ref01": {
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/lifecycle": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

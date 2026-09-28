@@ -1,0 +1,192 @@
+# Generated from the API definition and overwritten on every build: do not
+# edit this file. Put customizations in the guide entry file, which includes
+# this one and overrides its defaults:
+#   guide.aontu
+
+guide: {
+  metrics: count: entity: 24
+  metrics: count: path: 24
+  metrics: count: method: 37
+
+  entity: cloudflare_image: {
+    path: "/accounts/{account_id}/images/v1/{image_id}/blob": {
+      rename: param: "image_id": *"v1_id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: image: {
+    path: "/zones/{zone_id}/images/v1/flows": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.result`")|top
+      op: update: method: *PUT
+      op: update: transform: res: *("`body.result`")|top
+    }
+  }
+
+  entity: images_deleted: {
+    path: "/accounts/{account_id}/images/v1/variants/{variant_id}": {
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: images_image_direct_upload: {
+    path: "/accounts/{account_id}/images/v1/direct_upload": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/images/v2/direct_upload": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: images_image_key_response_collection: {
+    path: "/accounts/{account_id}/images/v1/keys": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/images/v1/keys/{signing_key_name}": {
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: images_image_response_single: {
+    path: "/accounts/{account_id}/images/v1": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/images/v1/{image_id}": {
+      op: load: method: *GET
+      op: patch: method: *PATCH
+    }
+  }
+
+  entity: images_image_variant_flat: {
+    path: "/accounts/{account_id}/images/v1/variants/{variant_id}/flat": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: images_image_variant_list: {
+    path: "/accounts/{account_id}/images/v1/variants": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: images_image_variant_simple: {
+    path: "/accounts/{account_id}/images/v1/variants": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/images/v1/variants/{variant_id}": {
+      op: load: method: *GET
+      op: patch: method: *PATCH
+    }
+  }
+
+  entity: images_images_list: {
+    path: "/accounts/{account_id}/images/v1": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/images/v2": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: images_images_stat: {
+    path: "/accounts/{account_id}/images/v1/stats": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: images_metadata_key: {
+    path: "/accounts/{account_id}/images/v2/metadata/keys": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: images_sourcingkit_connectivity_check: {
+    path: "/accounts/{account_id}/images/v2/sourcingkit/sources/connectivity-precheck": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}/connectivity": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: images_sourcingkit_migration: {
+    path: "/accounts/{account_id}/images/v2/sourcingkit/migrations": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: images_sourcingkit_migration_list: {
+    path: "/accounts/{account_id}/images/v2/sourcingkit/migrations": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: images_sourcingkit_migration_log_list: {
+    path: "/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/logs": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: images_sourcingkit_migration_progress: {
+    path: "/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/lifecycle": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: images_sourcingkit_migration_single: {
+    path: "/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/lifecycle/abort": {
+      op: patch: method: *PATCH
+    }
+    path: "/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/lifecycle/start": {
+      op: patch: method: *PATCH
+    }
+  }
+
+  entity: images_sourcingkit_source: {
+    path: "/accounts/{account_id}/images/v2/sourcingkit/sources": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}": {
+      rename: param: "source_id": *"id"
+      op: patch: method: *PATCH
+    }
+  }
+
+  entity: images_sourcingkit_source_list: {
+    path: "/accounts/{account_id}/images/v2/sourcingkit/sources": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: images_sourcingkit_source_single: {
+    path: "/accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: migration: {
+    path: "/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}": {
+      rename: param: "migration_id": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: source: {
+    path: "/accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}": {
+      rename: param: "source_id": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: v1n: {
+    path: "/accounts/{account_id}/images/v1/{image_id}": {
+      op: remove: method: *DELETE
+    }
+  }
+
+}
